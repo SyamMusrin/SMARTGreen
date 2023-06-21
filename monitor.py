@@ -1,8 +1,8 @@
 #Main Function
-import os
-
-from settings import *
 from modules import *
+from cloud import *
+from settings import *
+
 class Main():
     def Active():
         # Calculate the reference power level (for maximum amplitude of 1)
@@ -14,6 +14,7 @@ class Main():
         # Start the audio stream
         with stream:
             print("Noise Level Meter - Press Ctrl+C to stop.")
+            print("Listening...")
 
             try:
                 while True:
@@ -28,9 +29,12 @@ class Main():
                         time = now.strftime("%H:%M:%S")
 
                         Logging.New_Entry(date, time)
-                        num = Logging.Last()
-                        Audio.Record(d, sr, num)
+                        name = 'Entry' + str(Logging.Last()) + '.wav'
+                        file_data = Audio.Record(d = d, sr = sr, name = name, bd = bd)
 
+                        Cloud.Upload(file_data, BUCKET, name)
+                        print(f"Audio uploaded as '{name}'.")
+                        
             except KeyboardInterrupt:
                 pass
 
