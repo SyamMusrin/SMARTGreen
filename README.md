@@ -7,10 +7,9 @@ The orignal code of V1.0 beta was built upon.
 The following Modules have been added:
 
 1. Cloud module
-2. UPS module
-3. Power monitor
+2. UPS monitor module
 
-4. Microphone module (yet to be added)
+3. Microphone module (yet to be added)
    
 There are bugs present in the program such as:
 1. reuccuring uploads
@@ -24,8 +23,7 @@ The following Modules will be adeed to V1.1 beta:
 
 1. Cloud module
 2. Micropohone module
-3. UPS module
-4. Power monitor (Voltage Ampere power consumption battery life)
+3. UPS monitor module
 
 And subsequently cleaning the code, debugging and making it user
 friendly will be done for V1.0 release
