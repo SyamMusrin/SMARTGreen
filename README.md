@@ -2,6 +2,7 @@
 SMART Green project for GWS Living Art 
 
 21/6/23 V1.1 beta
+
 The orignal code of V1.0 beta was built upon.
 The following Modules have been added:
 
@@ -17,6 +18,7 @@ There are bugs present in the program such as:
 3. delayed recordings
 
 20/6/23 V1.0 beta
+
 This is the base code that would suffice the project.
 The following Modules will be adeed to V1.1 beta:
 
