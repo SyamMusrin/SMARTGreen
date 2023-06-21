@@ -1,0 +1,24 @@
+a. Open pi configuration tool raspi-config, enable I2C interface
+	Open terminal:
+sudo raspi-config
+	Select I2C interface and enable it
+
+b. Install i2c-tools and python-smbus, after the installation is complete. reboot pi
+	Open terminal:
+sudo apt-get install i2c-tools python smbus
+sudo reboot
+
+c. Run sudo i2cdetect -l to see which i2c bus the current pi is using.
+	Open terminal:
+sudo i2cdetect -l
+	Determine the system i2c bus is 1
+
+d. Run sudo i2cdetect -y 1 to view the devices mounted on the i2c bus of the
+current pi
+	Open terminal:
+sudo i2cdetect -y 1
+	Address 0x62 is CW2015
+
+e.Run the script with Python
+	Open terminal:
+python UPS_Lite_V1.3_CW2015.py
