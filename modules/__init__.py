@@ -5,5 +5,5 @@ import sounddevice as sd
 from io import BytesIO
 from datetime import datetime
 
-from . Audio import Audio
-from . Logging import *
+from . audio import Audio
+from . logging import *
