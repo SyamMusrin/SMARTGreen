@@ -3,6 +3,8 @@ from modules import *
 from cloud import *
 from settings import *
 
+import time
+
 class Main():
     def Active():
         # Calculate the reference power level (for maximum amplitude of 1)
@@ -29,6 +31,12 @@ class Main():
                     if db > t:
                         stream.stop()
                         print(f"Recording Initiated...")
+                        time.sleep(1)
+                        
+                        for i  in range(1,4):
+                            print(i)
+                            time.sleep(1)
+
                         stream.start() 
                         
             except KeyboardInterrupt:
