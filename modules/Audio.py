@@ -1,26 +1,23 @@
-#Recording Function
+#Audio Function
 import sounddevice as sd
+from io import BytesIO
 from scipy.io import wavfile
-import os
-from time import sleep
 
-class Audio():
-    def Record(duration, sample_rate, num):
-        # Set the sample rate and duration
-        fs = sample_rate  # Sample rate (Hz)
-        duration_s = duration  # Duration of recording (seconds)
+class Audio:
+    @staticmethod
+    def Record(d, sr, name, bd):
 
         # Record audio
         print("Recording audio...")
-        recording = sd.rec(int(duration_s * fs), samplerate=fs, channels=1)
-        sd.wait()  # Wait until recording is finished
+        recording = sd.rec(
+            int(d * sr), 
+            samplerate=sr, 
+            channels = 1, 
+            dtype= 'int' + str(bd),
+            blocking = True)
 
-        #Extract data
-        folder_name = os.getcwd() + "/recordings/"
-        file_name = "Entry" + num + ".wav"
-        file_dir = folder_name + file_name
+        # Save audio to a .wav file with specified bit depth
+        file_data = BytesIO()
+        wavfile.write(file_data, sr, recording)
 
-        # Save audio to a .wav file
-        wavfile.write(file_dir, fs, recording)
-
-        print(f"Audio saved as '{file_name}'.")
+        return file_data
