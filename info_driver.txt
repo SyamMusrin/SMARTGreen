@@ -1,0 +1,19 @@
+1. Download the driver
+
+git clone https://github.com/respeaker/seeed-voicecard.git
+cd seeed-voicecard
+sudo ./install.sh
+reboot 
+
+2. Check if its installed
+
+aplay -l
+
+arecord -l
+
+3. Configure sound settings
+
+alasmixer
+
+Note: Please use the F6 to select seeed-2mic-voicecard device first.
+

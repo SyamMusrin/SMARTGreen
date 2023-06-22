@@ -1,0 +1,28 @@
+1. Update and upgrade Raspberry pi
+sudo apt-get update
+sudo apt-get upgrade
+
+2.
+git clone https://github.com/respeaker/mic_hat.git
+cd mic_hat
+
+3.
+sudo apt-get install portaudio19-dev libatlas-base-dev
+pip3 install -r requirements.txt
+
+Appendix:
+
+Links:
+Microphone hat:
+
+	Recording with hat:
+	https://github.com/createlabz/createlabz-public/blob/main/raspberry/respeaker/2-mic-pi-hat/README.md
+
+	Official:
+	https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT_Raspberry/
+
+UPS Lite:
+	
+	Official:
+	https://github.com/linshuqin329/UPS-Lite
+	
