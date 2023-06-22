@@ -20,20 +20,16 @@ class Main():
                 while True:
                     data = stream.read(bs)[0]
                     rms = np.sqrt(np.mean(np.square(data)))
+
+
+                    #Voltage Ratio(dB)
                     db = 20 * math.log10(rms / reference_power)
                     print(f"Noise Level: {db:.2f} dB")
 
                     if db > t:
-                        now = datetime.now()
-                        date = now.strftime("%d/%m/%Y")
-                        time = now.strftime("%H:%M:%S")
-
-                        Logging.New_Entry(date, time)
-                        name = 'Entry' + str(Logging.Last()) + '.wav'
-                        file_data = Audio.Record(d = d, sr = sr, name = name, bd = bd)
-
-                        Cloud.Upload(file_data, BUCKET, name)
-                        print(f"Audio uploaded as '{name}'.")
+                        stream.stop()
+                        print(f"Recording Initiated...")
+                        stream.start() 
                         
             except KeyboardInterrupt:
                 pass
