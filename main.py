@@ -20,9 +20,12 @@ class Main():
                 while True:
                     data = stream.read(bs)[0]
                     rms = np.sqrt(np.mean(np.square(data)))
+
+                    #Voltage Ratio(dB)
                     db = 20 * math.log10(rms / reference_power)
 
                     if db > t:
+                        stream.stop()
                         now = datetime.now()
                         date = now.strftime("%d/%m/%Y")
                         time = now.strftime("%H:%M:%S")
@@ -33,6 +36,7 @@ class Main():
 
                         Cloud.Upload(file_data, BUCKET, name)
                         print(f"Audio uploaded as '{name}'.")
+                        stream.start() 
                         
             except KeyboardInterrupt:
                 pass
