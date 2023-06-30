@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import struct
-import smbus
+import smbus2
 import sys
 import time
 import RPi.GPIO as GPIO
@@ -42,7 +42,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(4,GPIO.IN)  # GPIO4 is used to detect whether an external power supply is inserted
   
-bus = smbus.SMBus(1)  # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
+bus = smbus2.SMBus(1)  # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
 
 
 QuickStart(bus)
