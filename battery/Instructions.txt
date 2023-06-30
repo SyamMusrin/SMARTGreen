@@ -5,7 +5,7 @@ sudo raspi-config
 
 b. Install i2c-tools and python-smbus, after the installation is complete. reboot pi
 	Open terminal:
-sudo apt-get install i2c-tools python smbus
+sudo apt-get install i2c-tools python smbus2
 sudo reboot
 
 c. Run sudo i2cdetect -l to see which i2c bus the current pi is using.
