@@ -1,19 +1,51 @@
-1. Download the driver
+0. Downloads the Rasbian OS (Buster)
 
-git clone https://github.com/respeaker/seeed-voicecard.git
+1. Update and upgrade Raspberry pi
+sudo apt-get update
+sudo apt-get upgrade
+
+2. Download git and update
+
+//Download git
+sudo apt install git
+
+//Install the pre-requisites to build
+
+sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext
+
+//Download git source
+cd /usr/src/
+wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
+tar -xzvf v2.32.0.tar.gz
+cd git-2.32.0/
+
+//Install
+make configure
+./configure --prefix=/usr/local
+make all
+sudo make install
+
+2. Update python and download pip
+
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+
+cd ~/Downloads
+wget https://www.python.org/ftp/python/3.11.4/Python-3.12.0.tgz`
+
+sudo tar zxf Python-3.12.0.tgz
+
+cd Python-3.12.0
+sudo ./configure --enable-optimizations
+
+sudo make
+
+2. Download Sound Driver
+
+git clone https://github.com/seeed-studio-projects/seeed-voicecard.git
 cd seeed-voicecard
 sudo ./install.sh
-reboot 
+sudo reboot now
 
-2. Check if its installed
+3. Download SMART Green
 
-aplay -l
-
-arecord -l
-
-3. Configure sound settings
-
-alasmixer
-
-Note: Please use the F6 to select seeed-2mic-voicecard device first.
-
+git clone https://github.com/SyamMusrin/SMARTGreen.git
