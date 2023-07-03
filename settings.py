@@ -10,7 +10,7 @@ bd = 16 #(Bit Depth)
 
 #AWS Connection Settings
 #=========================================
-ACCESS_KEY = 'AKIAWKFV35JKOAF3UZUQ'
-SECRET_KEY = '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'
+ACCESS_KEY = ''
+SECRET_KEY = ''
 BUCKET = 'awsgwsbk-1'
 #=========================================
