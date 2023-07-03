@@ -1,11 +1,3 @@
 smbus2
 boto3
-sounddevice
-scipy.io
-csv
-math
 datetime
-numpy
-io
-os
-time
