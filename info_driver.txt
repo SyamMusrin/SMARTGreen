@@ -50,4 +50,4 @@ sudo reboot now
 
 git clone https://github.com/SyamMusrin/SMARTGreen.git
 pip3 install -r REQUIREMENTS.txt
-sudo apt-get install python3-sounddevice python3-scipy python3-numpy
+sudo apt-get install python3-sounddevice python3-scipy python3-numpy i2c-tools
