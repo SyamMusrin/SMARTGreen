@@ -32,9 +32,10 @@ class Main():
 
                         Logging.New_Entry(date, time)
                         name = 'Entry' + str(Logging.Last()) + '.wav'
+                        key = 'audio/recorded_audio/' + name
                         file_data = Audio.Record(d = d, sr = sr, name = name, bd = bd)
 
-                        Cloud.Upload(file_data, BUCKET, name)
+                        Cloud.Upload(file_data, BUCKET, key)
                         print(f"Audio uploaded as '{name}'.")
                         stream.start() 
                         
