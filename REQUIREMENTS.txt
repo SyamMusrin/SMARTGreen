@@ -1,3 +1,4 @@
 smbus2
 boto3
 datetime
+sounddevice
