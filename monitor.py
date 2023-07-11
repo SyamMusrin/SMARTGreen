@@ -3,15 +3,13 @@ from modules import *
 from cloud import *
 from settings import *
 
-import time
-
 class Main():
     def Active():
         # Calculate the reference power level (for maximum amplitude of 1)
         reference_power = 1.0
 
         # Initialize the audio stream
-        stream = sd.InputStream(samplerate=sr, channels=1, blocksize=bs)
+        stream = sd.InputStream(samplerate=sr, channels=ch, blocksize=bs)
 
         # Start the audio stream
         with stream:
@@ -23,20 +21,24 @@ class Main():
                     data = stream.read(bs)[0]
                     rms = np.sqrt(np.mean(np.square(data)))
 
-
                     #Voltage Ratio(dB)
                     db = 20 * math.log10(rms / reference_power)
-                    print(f"Noise Level: {db:.2f} dB")
 
                     if db > t:
                         stream.stop()
-                        print(f"Recording Initiated...")
-                        time.sleep(1)
-                        
-                        for i  in range(1,4):
-                            print(i)
-                            time.sleep(1)
+                        now = datetime.now()
+                        date = now.strftime("%d/%m/%Y")
+                        time = now.strftime("%H:%M:%S")
 
+                        Logging.New_Entry(file_format = file_format, sr = sr,
+                            bd = bd, d = d, date = date, time = time)
+
+                        name = 'Entry' + str(Logging.Last()) + '.wav'
+                        key = folder_dir + name
+                        file_data = Audio.Record(d = d, sr = sr, name = name, bd = bd, ch = ch)
+
+                        Cloud.Upload(file_data, BUCKET, key)
+                        print(f"Audio uploaded as '{name}'.")
                         stream.start() 
                         
             except KeyboardInterrupt:
