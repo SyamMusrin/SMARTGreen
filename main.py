@@ -9,7 +9,7 @@ class Main():
         reference_power = 1.0
 
         # Initialize the audio stream
-        stream = sd.InputStream(samplerate=sr, channels=1, blocksize=bs)
+        stream = sd.InputStream(samplerate=sr, channels=ch, blocksize=bs)
 
         # Start the audio stream
         with stream:
@@ -26,14 +26,10 @@ class Main():
 
                     if db > t:
                         stream.stop()
-                        now = datetime.now()
-                        date = now.strftime("%d/%m/%Y")
-                        time = now.strftime("%H:%M:%S")
 
-                        Logging.New_Entry(date, time)
                         name = 'Entry' + str(Logging.Last()) + '.wav'
-                        key = 'audio/recorded_audio/' + name
-                        file_data = Audio.Record(d = d, sr = sr, name = name, bd = bd)
+                        key = folder_dir + name
+                        file_data = Audio.Record(name)
 
                         Cloud.Upload(file_data, BUCKET, key)
                         print(f"Audio uploaded as '{name}'.")
@@ -46,4 +42,11 @@ class Main():
         stream.stop()
 
 if __name__ == "__main__":
-    Main.Active()
+
+    i = Button.check()
+    if i:
+        print('Skip main function...')
+        Main.Active()
+
+    else:
+        pass
