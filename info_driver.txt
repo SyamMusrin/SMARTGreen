@@ -4,40 +4,13 @@
 sudo apt-get update
 sudo apt-get upgrade
 
-2. Download git and update
+2. Download git
 
 //Download git
-sudo apt-get install git
+sudo apt install git
 
-//Install the pre-requisites to build
-
-sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext
-
-//Download git source
-cd /usr/src/
-wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
-tar -xzvf v2.32.0.tar.gz
-cd git-2.32.0/
-
-//Install
-make configure
-./configure --prefix=/usr/local
-make all
-sudo make install
-
-2. Update python and download pip
-
-sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
-
-cd ~/Downloads
-wget https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz`
-
-sudo tar zxf Python-3.11.4.tgz
-
-cd Python-3.11.4
-sudo ./configure --enable-optimizations
-
-sudo make
+3. Download pip
+sudo apt-get install python3-pip
 
 2. Download Sound Driver
 
@@ -51,3 +24,35 @@ sudo reboot now
 git clone https://github.com/SyamMusrin/SMARTGreen.git
 sudo pip3 install -r REQUIREMENTS.txt
 sudo apt-get install python3-scipy python3-numpy i2c-tools portaudio19-dev libatlas-base-dev
+
+Optional:
+
+1. Updating Git
+//Install the pre-requisites to build//Install
+make configure
+./configure --prefix=/usr/local
+make all
+sudo make install
+
+sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext
+
+//Download git source
+cd /usr/src/
+wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
+tar -xzvf v2.32.0.tar.gz
+cd git-2.32.0/
+
+2. Update Python
+
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-devlibbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+
+cd ~/Downloads
+wget https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz`
+
+sudo tar zxf Python-3.11.4.tgz
+
+cd Python-3.11.4
+sudo ./configure --enable-optimizations
+
+sudo make
+
