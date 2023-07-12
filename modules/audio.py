@@ -3,16 +3,18 @@ import sounddevice as sd
 from io import BytesIO
 from scipy.io import wavfile
 
+from settings import *
+
 class Audio:
     @staticmethod
-    def Record(d, sr, name, bd):
+    def Record(name):
 
         # Record audio
         print("Recording audio...")
         recording = sd.rec(
             int(d * sr), 
             samplerate=sr, 
-            channels = 1, 
+            channels = ch, 
             dtype= 'int' + str(bd),
             blocking = True)
 
