@@ -14,14 +14,14 @@ file_format = '.wav'
 #=========================================
 ACCESS_KEY = ''
 SECRET_KEY = ''
-BUCKET = 'awsgwsbk-1'
-folder_dir = 'audio/recorded_audio/gws/'
+BUCKET = ''
+folder_dir = ''
 #=========================================
 
 #MySQL Connection Settings
 #=========================================
 rds_host = ''
 rds_user = ''
-drs_pass = ''
-rds_db_name = 'gws'
+rds_pass = ''
+rds_db_name = ''
 #=========================================
