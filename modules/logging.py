@@ -9,7 +9,7 @@ connection = pymysql.connect(host=rds_host, user=rds_user,
 
 class Logging():
 	#Checks for last entry
-	def Last():
+	def last():
 		# Create a cursor
 		cursor = connection.cursor()
 		# Execute SELECT query
@@ -20,7 +20,6 @@ class Logging():
 		result = cursor.fetchone()
 
 		# Extract the number
-		last_number = ''.join(filter(str.isdigit, result[0]))
+		number = ''.join(filter(str.isdigit, result[0]))
 
-		number = int(last_number) + 1
 		return number
