@@ -1,4 +1,4 @@
 smbus2
 boto3
-datetime
+pymysql
 sounddevice
