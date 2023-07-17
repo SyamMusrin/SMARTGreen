@@ -25,6 +25,16 @@ git clone https://github.com/SyamMusrin/SMARTGreen.git
 sudo pip3 install -r REQUIREMENTS.txt
 sudo apt-get install python3-scipy python3-numpy i2c-tools portaudio19-dev libatlas-base-dev
 
+4. Launch application on startup
+cd SMARTGreen
+chmod 755 launcher.sh
+cd
+mkdir logs
+sudo crontab -e
+
+at the bottom of the code add: 
+@reboot sh /home/pi/SMARTGreen/launcher.sh >/home/pi/logs/cronlog 2>&1
+
 Optional:
 
 1. Updating Git
