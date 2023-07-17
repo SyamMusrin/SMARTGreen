@@ -1,6 +1,16 @@
 # SMARTGreen
 SMART Green project for GWS Living Art 
 
+17/7/23 V1.3.1 release
+Made amendments to the folder in order for the raspberrypi to
+launch the python script on startup.
+Updated the instructions and added a few more files:
+1. launcher.sh
+2. logs
+
+amended code:
+1. main.py (programed button)
+
 12/7/23 V1.3 release
 This is the final version for usage.
 The changes:
