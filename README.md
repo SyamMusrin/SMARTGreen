@@ -67,11 +67,12 @@ There are bugs present in the program such as:
 20/6/23 V1.0 beta
 
 This is the base code that would suffice the project.
-The following Modules will be adeed to V1.1 beta:
+The following Modules will be added to V1.1 beta:
 
 1. Cloud module
-2. Microphone module
+2. Microphone module (audio.py, logging.py)
 3. UPS monitor module
+4. main.py
 
 And subsequently cleaning the code, debugging and making it user
 friendly will be done for V1.0 release
