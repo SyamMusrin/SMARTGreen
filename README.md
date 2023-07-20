@@ -1,7 +1,7 @@
 # SMARTGreen
 SMART Green project for GWS Living Art 
 
-17/7/23 V1.3.1 release
+17/7/23 V1.1.1 release
 Made amendments to the folder in order for the raspberrypi to
 launch the python script on startup.
 Updated the instructions and added a few more files:
@@ -11,7 +11,7 @@ Updated the instructions and added a few more files:
 amended code:
 1. main.py (programed button)
 
-12/7/23 V1.3 release
+12/7/23 V1.1 release
 This is the final version for usage.
 The changes:
 1. logging.py
@@ -25,7 +25,7 @@ The changes:
 	This is a programmable button that would allow you to
 	connect/code to the raspberrypi device. This button will end the main function if pressed (hold) on boot.
 
-4/7/23 V1.2.1 alpha
+4/7/23 V1.0.3 alpha
 The bugs of v1.1 was fixed:
 
 1. reuccuring uploads 
@@ -39,7 +39,7 @@ The bugs of v1.1 was fixed:
 	fixed in audio.py by changing the modules
 
 
-28/6/23 V1.2 alpha
+28/6/23 V1.0.2 alpha
 
 This code is used to test out on the raspberrypi.
 The following Modules have been added:
@@ -49,7 +49,7 @@ The following Modules have been added:
 The main.py was changed to fix the functionality of
 the device
 
-21/6/23 V1.1 beta
+21/6/23 V1.0.1 beta
 
 The orignal code of V1.0 beta was built upon.
 The following Modules have been added:
