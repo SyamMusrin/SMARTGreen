@@ -3,7 +3,7 @@ SMART Green project for GWS Living Art
 
 17/7/23 V1.1.1 release
 Made amendments to the folder in order for the raspberrypi to
-launch the python script on startup.
+launch main.py script on startup.
 Updated the instructions and added a few more files:
 1. launcher.sh
 2. logs
@@ -11,11 +11,11 @@ Updated the instructions and added a few more files:
 amended code:
 1. main.py (programed button)
 
-12/7/23 V1.1 release
+12/7/23 V1.1.0 release
 This is the final version for usage.
 The changes:
 1. logging.py
-	The logging systm will be on the database. To name
+	The logging system will be on the database. To name
 	the file we will connect to the database and retrieve
 	the number of the previous entry
 
@@ -26,7 +26,7 @@ The changes:
 	connect/code to the raspberrypi device. This button will end the main function if pressed (hold) on boot.
 
 4/7/23 V1.0.3 alpha
-The bugs of v1.1 was fixed:
+The bugs of v1.0.2 was fixed:
 
 1. reuccuring uploads 
 	fixed in main.py by adding stream.stop() & stream.start()
@@ -40,7 +40,7 @@ The bugs of v1.1 was fixed:
 
 
 28/6/23 V1.0.2 alpha
-
+- Bug fixed
 This code is used to test out on the raspberrypi.
 The following Modules have been added:
 
@@ -50,9 +50,9 @@ The main.py was changed to fix the functionality of
 the device
 
 21/6/23 V1.0.1 beta
-
+- Bug fixed
 The orignal code of V1.0 beta was built upon.
-The following Modules have been added:
+The following Modules have been affected:
 
 1. Cloud module
 2. UPS monitor module
