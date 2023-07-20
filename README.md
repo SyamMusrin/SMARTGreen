@@ -70,7 +70,7 @@ This is the base code that would suffice the project.
 The following Modules will be adeed to V1.1 beta:
 
 1. Cloud module
-2. Micropohone module
+2. Microphone module
 3. UPS monitor module
 
 And subsequently cleaning the code, debugging and making it user
